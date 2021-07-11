@@ -1,5 +1,5 @@
 plugins {
-    kotlin("jvm") version "1.4.30"
+    kotlin("jvm") version "1.5.20"
     id("idea")
     java
     jacoco
@@ -25,13 +25,13 @@ java {
 }
 
 object V {
-    const val guice = "4.2.3"
-    const val guava = "29.0-jre"
-    const val kotlin = "1.4.21"
-    const val ktor = "1.4.1"
+    const val guice = "5.0.1"
+    const val guava = "30.1-jre"
+    const val kotlin = "1.5.20"
+    const val ktor = "1.6.1"
     const val jackson = "2.10.4"
-    const val exposed = "0.25.1"
-    const val hikaricp = "3.4.5"
+    const val exposed = "0.32.1"
+    const val hikaricp = "4.0.3"
     const val postgres = "42.2.2"
 
     const val kotlinLogging = "1.7.8"
