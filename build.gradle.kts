@@ -101,7 +101,7 @@ tasks {
     shadowDistTar { enabled = false }
 
     register<JavaExec>("hydrate-database") {
-        main = "com.company.hierarchy.setup.HydrateDatabaseKt"
+        main = "com.idiomcentric.setup.HydrateDatabaseKt"
         classpath = sourceSets["main"].runtimeClasspath
     }
 }

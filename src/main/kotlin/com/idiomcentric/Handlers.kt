@@ -8,7 +8,12 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
 import com.fasterxml.jackson.module.kotlin.MissingKotlinParameterException
 import com.google.inject.AbstractModule
 import com.google.inject.Inject
+import com.idiomcentric.daos.ExamplesTable
+import com.idiomcentric.daos.PostgresConnectionProvider
+import com.idiomcentric.routes.example
 import com.idiomcentric.routes.health
+import com.idiomcentric.services.ConfigService
+import com.idiomcentric.services.ExampleService
 import io.ktor.application.Application
 import io.ktor.application.install
 import io.ktor.application.call
@@ -36,9 +41,10 @@ import kotlin.time.ExperimentalTime
 class KtorTemplateBindings(private val application: Application) : AbstractModule() {
     override fun configure() {
         binder().requireExplicitBindings()
-//        bind(ConfigService::class.java).asEagerSingleton()
-//        bind(PostgresConnectionProvider::class.java).asEagerSingleton()
-//        bind(KtorTemplateService::class.java).asEagerSingleton()
+        bind(ConfigService::class.java).asEagerSingleton()
+        bind(PostgresConnectionProvider::class.java).asEagerSingleton()
+        bind(ExamplesTable::class.java).asEagerSingleton()
+        bind(ExampleService::class.java).asEagerSingleton()
         bind(Application::class.java).toInstance(application)
         bind(MainRouting::class.java).asEagerSingleton()
     }
@@ -83,10 +89,12 @@ fun Application.main(injectorCreator: (Application) -> Unit) {
 @ExperimentalTime
 class MainRouting @Inject constructor(
     application: Application,
+    exampleService: ExampleService,
 ) {
     init {
         application.routing {
             health()
+            example(exampleService)
         }
     }
 }
