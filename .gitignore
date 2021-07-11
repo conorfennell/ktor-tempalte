@@ -1,0 +1,12 @@
+.gradle
+build
+.idea
+gradlew
+gradlew.bat
+gradle
+
+out
+
+.DS_Store
+notes.txt
+tasks.txt
