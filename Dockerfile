@@ -17,4 +17,4 @@ USER 10000:10001
 
 ENTRYPOINT exec java $JAVA_OPTS \
 -XX:+UseContainerSupport \
--jar /opt/app/app.jar com.company.hierarchy.AppKt
+-jar /opt/app/app.jar com.idiomcentric.AppKt
