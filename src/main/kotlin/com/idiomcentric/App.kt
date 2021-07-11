@@ -5,14 +5,12 @@ import io.ktor.application.Application
 import io.ktor.locations.KtorExperimentalLocationsAPI
 import io.ktor.server.cio.CIO
 import io.ktor.server.engine.embeddedServer
-import io.ktor.util.KtorExperimentalAPI
 import mu.KLogger
 import mu.KotlinLogging
 import kotlin.time.ExperimentalTime
 
 val logger: KLogger = KotlinLogging.logger {}
 
-@KtorExperimentalAPI
 @KtorExperimentalLocationsAPI
 @ExperimentalTime
 val defaultMain: Application.() -> Unit = fun Application.() {
@@ -21,7 +19,6 @@ val defaultMain: Application.() -> Unit = fun Application.() {
     }
 }
 
-@KtorExperimentalAPI
 @KtorExperimentalLocationsAPI
 @ExperimentalTime
 fun main() {

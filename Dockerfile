@@ -1,7 +1,7 @@
 FROM gradle:6.4.0-jdk11 AS build
 WORKDIR /app
 COPY . .
-RUN gradle build --stacktrace --info
+RUN gradle build --stacktrace --info --warning-mode all
 RUN ls /app
 RUN ls /app/build/libs/
 
