@@ -12,14 +12,14 @@ import kotlin.time.ExperimentalTime
 
 val logger: KLogger = KotlinLogging.logger {}
 
- @KtorExperimentalAPI
- @KtorExperimentalLocationsAPI
- @ExperimentalTime
- val defaultMain: Application.() -> Unit = fun Application.() {
-     main {
-         Guice.createInjector(KtorTemplateBindings(it))
-     }
- }
+@KtorExperimentalAPI
+@KtorExperimentalLocationsAPI
+@ExperimentalTime
+val defaultMain: Application.() -> Unit = fun Application.() {
+    main {
+        Guice.createInjector(KtorTemplateBindings(it))
+    }
+}
 
 @KtorExperimentalAPI
 @KtorExperimentalLocationsAPI
@@ -29,6 +29,6 @@ fun main() {
         CIO,
         port = 8000,
         configure = {},
-         module = defaultMain
+        module = defaultMain
     ).start(wait = true)
 }

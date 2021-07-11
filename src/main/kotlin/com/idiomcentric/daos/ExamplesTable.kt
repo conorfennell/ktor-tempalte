@@ -27,8 +27,8 @@ class ExamplesTable @Inject constructor(
     }
 
     suspend fun create(example: Example): Example = connection.dbQuery {
-            this.insert { toRow(example, it) }
-            example
+        this.insert { toRow(example, it) }
+        example
     }
 
     private fun toRow(example: Example, insert: InsertStatement<Number>) {
@@ -36,16 +36,11 @@ class ExamplesTable @Inject constructor(
         insert[this.createdAt] = example.createdAt
     }
 
-
     private fun toHierarchy(row: ResultRow): Example {
         val id = row[this.id]
         val createdAt = row[this.createdAt]
         return Example(id, createdAt)
     }
-
-
 }
 
-
 data class Example(val id: UUID, val createdAt: Instant)
-

@@ -1,8 +1,8 @@
 package com.idiomcentric.daos
 
+import com.google.inject.Inject
 import com.idiomcentric.services.ConfigService
 import com.idiomcentric.services.PostgresConfig
-import com.google.inject.Inject
 import com.zaxxer.hikari.HikariConfig
 import com.zaxxer.hikari.HikariDataSource
 import kotlinx.coroutines.Dispatchers
