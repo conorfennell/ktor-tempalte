@@ -31,11 +31,9 @@ import io.ktor.request.httpMethod
 import io.ktor.request.path
 import io.ktor.response.respond
 import io.ktor.routing.routing
-import io.ktor.util.KtorExperimentalAPI
 import org.slf4j.event.Level
 import kotlin.time.ExperimentalTime
 
-@KtorExperimentalAPI
 @KtorExperimentalLocationsAPI
 @ExperimentalTime
 class KtorTemplateBindings(private val application: Application) : AbstractModule() {
@@ -50,7 +48,6 @@ class KtorTemplateBindings(private val application: Application) : AbstractModul
     }
 }
 
-@KtorExperimentalAPI
 @KtorExperimentalLocationsAPI
 @ExperimentalTime
 fun Application.main(injectorCreator: (Application) -> Unit) {

@@ -5,7 +5,7 @@ plugins {
     jacoco
     id("application")
     id("com.github.johnrengelman.shadow") version "6.0.0" // used to build a fat jar
-    id("org.jlleitschuh.gradle.ktlint") version "10.0.0"
+    id("org.jlleitschuh.gradle.ktlint") version "10.1.0"
 }
 
 group = "com.idiomcentric"
@@ -29,16 +29,16 @@ object V {
     const val guava = "30.1-jre"
     const val kotlin = "1.5.20"
     const val ktor = "1.6.1"
-    const val jackson = "2.10.4"
+    const val jackson = "2.12.4"
     const val exposed = "0.32.1"
     const val hikaricp = "4.0.3"
     const val postgres = "42.2.2"
 
-    const val kotlinLogging = "1.7.8"
+    const val kotlinLogging = "2.0.8"
     const val logback = "0.1.5"
     const val logbackClassic = "1.2.3"
 
-    const val junit = "5.4.0"
+    const val junit = "5.7.2"
     const val kotest = "4.3.0"
     const val h2 = "1.4.199"
 }

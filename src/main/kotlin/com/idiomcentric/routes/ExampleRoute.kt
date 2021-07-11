@@ -3,6 +3,7 @@ package com.idiomcentric.routes
 import com.idiomcentric.services.ExampleService
 import io.ktor.application.call
 import io.ktor.http.HttpStatusCode
+import io.ktor.locations.KtorExperimentalLocationsAPI
 import io.ktor.locations.Location
 import io.ktor.locations.get
 import io.ktor.response.respond
@@ -11,6 +12,7 @@ import java.util.UUID
 
 const val EXAMPLE_PATH = "/v1/example"
 
+@KtorExperimentalLocationsAPI
 fun Routing.example(exampleService: ExampleService) {
 
     @Location("$EXAMPLE_PATH/{exampleId}")
